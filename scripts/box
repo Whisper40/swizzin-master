@@ -269,8 +269,8 @@ fi
 #echo "export PATH=$PATH:/usr/local/bin/swizzin" >> /home/$user/.profile
 #chown $user: /home/$user/.profile
 cp /home/$user/.rtorrent.rc /home/$user/.rtorrentbackup.rc
-cp /etc/swizzin/paramsratio/ratio.dat /srv/rutorrent/share/users/$user/settings/
-cp /etc/swizzin/paramsratio/ratiorules.dat /srv/rutorrent/share/users/$user/settings/
+#cp /etc/swizzin/paramsratio/ratio.dat /srv/rutorrent/share/users/$user/settings/ratio.dat
+#cp /etc/swizzin/paramsratio/ratiorules.dat /srv/rutorrent/share/users/$user/settings/ratiorules.dat
 }
 
 function _deluser {
