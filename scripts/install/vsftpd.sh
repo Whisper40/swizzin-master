@@ -29,6 +29,9 @@ write_enable=YES
 force_dot_files=YES
 local_umask=022
 dirmessage_enable=YES
+#Ajout
+chroot_local_user=YES
+#Fin
 use_localtime=YES
 xferlog_enable=YES
 connect_from_port_20=YES
@@ -56,6 +59,24 @@ secure_chroot_dir=/var/run/vsftpd/empty
 VSC
 
 systemctl restart vsftpd
+sed '/Subsystem      sftp    /usr/lib/openssh/sftp-server/d' /etc/ssh/sshd_config
 
+
+
+cat >> /etc/ssh/sshd_config <<VSC2
+
+Subsystem       sftp    internal-sftp
+
+Match Group ftpusers
+         ChrootDirectory /home/%u
+         ForceCommand internal-sftp
+         AllowTCPForwarding no
+         X11Forwarding no
+
+
+VSC2
+
+service ssh restart
+groupadd ftpusers
 
 touch /install/.vsftpd.lock
