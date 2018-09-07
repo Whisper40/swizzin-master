@@ -36,7 +36,7 @@ if [[ ! -f /install/.rutorrent.lock ]]; then
 if [[ ! -d /srv/rutorrent/plugins/theme/themes/club-QuickBox ]]; then
   cd /srv/rutorrent/plugins/theme/themes
   git clone https://github.com/QuickBox/club-QuickBox club-QuickBox >/dev/null 2>&1
-  perl -pi -e "s/\$defaultTheme \= \"\"\;/\$defaultTheme \= \"club-QuickBox\"\;/g" /srv/rutorrent/plugins/theme/conf.php
+  perl -pi -e "s/\$defaultTheme \= \"\"\;/\$defaultTheme \= \"MaterialDesign\"\;/g" /srv/rutorrent/plugins/theme/conf.php
 fi
 
 if [[ ! -d /srv/rutorrent/plugins/filemanager ]]; then
