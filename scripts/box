@@ -269,6 +269,14 @@ fi
 #echo "export PATH=$PATH:/usr/local/bin/swizzin" >> /home/$user/.profile
 #chown $user: /home/$user/.profile
 cp /home/$user/.rtorrent.rc /home/$user/.rtorrentbackup.rc
+usermod -aG ftpusers $user
+chown root:root /home/$user
+chmod o+rx /home/$user
+echo "Sécuritée SFTP/Limité repertoire home fait"
+echo "Reboot nécessaire pour appliquer les changements"
+
+
+
 #cp /etc/swizzin/paramsratio/ratio.dat /srv/rutorrent/share/users/$user/settings/ratio.dat
 #cp /etc/swizzin/paramsratio/ratiorules.dat /srv/rutorrent/share/users/$user/settings/ratiorules.dat
 }
